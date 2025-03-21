@@ -1,13 +1,14 @@
-import {ApolloServer,gql} from "apollo-server"
-import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core"
-import { url } from "inspector";
-const server=new ApolloServer({
-    typeDefs,
-    resolvers,
-    plugins:[
-        ApolloServerPluginLandingPageGraphQLPlayground
-      ] 
+import { ApolloServer } from "apollo-server";
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import typeDefs from "./schemaGql.js";  
+import resolvers from "./resolver.js";
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
-server.listen().then(({url})=>{
-    console.log(`👍 Server ready at ${url}`)
+
+server.listen().then(({ url }) => {
+  console.log(`👍 Server ready at ${url}`);
 });
