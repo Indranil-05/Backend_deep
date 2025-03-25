@@ -1,6 +1,6 @@
 const users = [
-    { id: "1", name: "John Doe", email: "john@example.com" },
-    { id: "2", name: "Jane Doe", email: "jane@example.com" },
+    { id: "1", name: "Deep Majee", email: "john@example.com" },
+    { id: "2", name: "Indranil bada", email: "badaindro@gmail.com" },
   ];
   
   const resolvers = {
