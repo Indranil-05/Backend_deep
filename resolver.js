@@ -1,15 +1,34 @@
-const users = [
-    { id: "1", name: "Deep Majee", email: "john@example.com" },
-    { id: "2", name: "Indranil bada", email: "badaindro@gmail.com" },
-  ];
-  
-  const resolvers = {
-    Query: {
-      hello: () => "Hello, GraphQL World! 🚀",
-      getUser: (_, { id }) => users.find(user => user.id === id),
-      getAllUsers: () => users,
+import Student from "./model/students.js";
+
+const resolvers = {
+  Query: {
+    getStudents: async () => {
+      try {
+        return await Student.find();  // Fetch all students from the database
+      } catch (error) {
+        throw new Error("Error fetching students: " + error.message);
+      }
     },
-  };
+    getAllStudents: async () => {
+      try {
+        return await Student.find();  // Fetch all students
+      } catch (error) {
+        throw new Error("Error fetching all students: " + error.message);
+      }
+    },
+  },
   
-  export default resolvers;
-  
+  Mutation: {
+    createStudent: async (_, { input }) => {
+      try {
+        const newStudent = new Student(input);
+        await newStudent.save();
+        return newStudent;
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+  },
+};
+
+export default resolvers;

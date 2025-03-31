@@ -1,16 +1,34 @@
 import { gql } from "apollo-server";
 
 const typeDefs = gql`
-  type Query {
-    hello: String
-    getUser(id: ID!): User
-    getAllUsers: [User]
+  type Student {
+    _id: ID!
+    Name: String!
+    Age: Int!
+    RegistrationNo: Int!
+    Email: String!
+    AadharNo: String!
+    Batch: String!
+    Year: String!
   }
 
-  type User {
-    id: ID!
-    name: String!
-    email: String!
+  input StudentInput {
+    Name: String!
+    Age: Int!
+    RegistrationNo: Int!
+    Email: String!
+    AadharNo: String!
+    Batch: String!
+    Year: String!
+  }
+
+  type Mutation {
+    createStudent(input: StudentInput!): Student
+  }
+
+  type Query {
+    getStudents: [Student]
+    getAllStudents:[Student]
   }
 `;
 
