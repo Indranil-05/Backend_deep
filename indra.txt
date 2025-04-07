@@ -1,0 +1,23 @@
+createStudent Mutation:--------->
+
+
+mutation {
+  createStudent(input: {
+    Name: "Indranil Mandal",
+    Age: 20,
+    RegistrationNo: 1001,
+    Email: "hlosumitkumar@gmail.com",
+    AadharNo: "234456534",
+    Batch: "BCS-2B",
+    Year: "2nd"
+  }) {
+    _id
+    Name
+    Age
+    RegistrationNo
+    Email
+    AadharNo
+    Batch
+    Year
+  }
+}
