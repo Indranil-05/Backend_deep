@@ -21,3 +21,21 @@ mutation {
     Year
   }
 }
+
+
+getAllStudents Query:--------->
+
+query {
+  getAllStudents {
+    _id
+    Name
+    Age
+    RegistrationNo
+    Email
+    AadharNo
+    Batch
+    Year
+  }
+}
+
+
