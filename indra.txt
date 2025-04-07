@@ -34,9 +34,10 @@ query {
     Email
     AadharNo
     Batch
-    Year
-  }
+    Year
+  }
 }
+
   
 
 

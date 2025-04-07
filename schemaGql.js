@@ -29,6 +29,7 @@ const typeDefs = gql`
   type Query {
     getStudents: [Student]
     getAllStudents:[Student]
+    getStudentByFilter(Name: String!, RegistrationNo: Int!): Student
   }
 `;
 
