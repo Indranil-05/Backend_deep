@@ -39,10 +39,5 @@ query {
 }
   
 
----------------------------------------------------------------------------------------
-hello my name is deep 
-i have successifully logined to git hub and vs code
 
-hello my name is Indranil 
-I have created the environment of the git hub and vs code
 
